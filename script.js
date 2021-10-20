@@ -1,8 +1,9 @@
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.nav-menu');
-const navLinks = document.querySelector('.nav-links')
+const navLinks = document.querySelectorAll('.nav-links')
 const loader = document.querySelector('.loader');
 const main = document.querySelector('.kaushal-website');
+const body = document.querySelector('body')
 
 
 // loader
@@ -20,13 +21,27 @@ init();
 
 
 // Navbar
-menu.addEventListener('click', function() {
-    menu.classList.toggle('is-active');
-    console.log("Button is active");
-    menuLinks.classList.toggle('active');
+menu.addEventListener('click', function () {
+  menu.classList.toggle('is-active');
+  console.log("Button is active");
+  menuLinks.classList.toggle('active');
+  body.classList.toggle('is-nav');
+  
+// Nav button scroll
+  for (var i = 0; i < navLinks.length; i++) {
+    var self = navLinks[i];
+
+    self.addEventListener(
+      "click",
+      function () {
+        menu.classList.remove('is-active');
+        menuLinks.classList.remove("active");
+        body.classList.remove("is-nav");
+
+      })
+  }
+
 })
-
-
 // Get a Date
 
 const countdown = () => {
