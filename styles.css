@@ -1560,7 +1560,8 @@ header video {
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "quiz-card project-card"
-    "programming-card poster-card";
+    "programming-card poster-card"
+    "research-card workshop-card";
 }
 
 .quiz-card {
@@ -1581,6 +1582,10 @@ header video {
 
 .research-card {
   grid-area: research-card;
+}
+
+.workshop-card {
+  grid-area: workshop-card;
 }
 
 .event-card {
@@ -1749,7 +1754,6 @@ header video {
   }
 .sponsor{
     padding: 0 0 0 0;  
-
 
 }
 .company{
@@ -1951,7 +1955,9 @@ details summary {
       "quiz-card"
       "project-card"
       "programming-card"
-      "poster-card";
+      "poster-card"
+      "research-card"
+      "workshop-card";
   }
 
   .event-card {
